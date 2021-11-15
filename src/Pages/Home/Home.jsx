@@ -25,16 +25,13 @@ const Home = () => {
         setCityInfo(null);
         setLoader(true);
 
-        try{
-            const API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=es&appid=${process.env.REACT_APP_API_KEY}`
-            const response = await fetch(API);
-            const result = await response.json();
-            setCityInfo(result);
-            console.log(result)
-            setLoader(false)
-        }catch (error) {
-            alert("City not found")
-        }
+        const API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=es&appid=${process.env.REACT_APP_API_KEY}`
+        const response = await fetch(API);
+        const result = await response.json();
+        setCityInfo(result);
+        console.log(result)
+        setLoader(false)
+        
 
     };
         
