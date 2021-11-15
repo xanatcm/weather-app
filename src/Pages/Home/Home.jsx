@@ -57,7 +57,7 @@ const Home = () => {
 
             {
                 cityInfo ? (
-                    <CityInformation name={cityInfo.name} weather={cityInfo.main.temp} id={cityInfo.id}/>
+                    <CityInformation city={cityInfo.name} weather={cityInfo.main.temp} id={cityInfo.id}/>
                 ) 
                 : null
         

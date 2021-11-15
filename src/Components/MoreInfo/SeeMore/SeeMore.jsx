@@ -8,7 +8,7 @@ import 'boxicons'
 
 
 
-const SeeMore = ({name, mainWeather, maxWeather, minWeather, mainTemp}) => {
+const SeeMore = ({city, mainWeather, maxWeather, minWeather, mainTemp}) => {
 
     
 
@@ -32,7 +32,7 @@ const SeeMore = ({name, mainWeather, maxWeather, minWeather, mainTemp}) => {
         
            
            <h3 className="text-7xl font-medium p-3 text-coral">{`${Math.round(mainTemp)} °C`}</h3>
-           <p className="text-2xl font-semibold p-1 text-navy">{name}</p>
+           <p className="text-2xl font-semibold p-1 text-navy">{city}</p>
            <p className="text-1xl font-medium p-1 text-navy">{`Min: ${Math.round(maxWeather)} °C`}</p>
            <p className="text-1xl font-medium p-1 text-navy">{`Max: ${Math.round(minWeather)} °C`}</p>
 

@@ -17,7 +17,7 @@ const MoreInfo = () => {
     const [loader, setLoader] = useState(false)
 
     //RouterHooks
-    const { name } = useParams();
+    const { city } = useParams();
 
     useEffect(() => {
         
@@ -26,18 +26,17 @@ const MoreInfo = () => {
             setMoreInfo(null);
             setLoader(true);
 
-            
-            const API = `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&lang=es&appid=${process.env.REACT_APP_API_KEY}`
+            const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=es&appid=${process.env.REACT_APP_API_KEY}`
             const response = await fetch(API);
             const result = await response.json();
             setMoreInfo(result);
             console.log(result)
             setLoader(false)
-        }
+        };
 
         handleSingleCity();
 
-    }, [])
+    }, [city]);
     
 
     return (
@@ -52,10 +51,9 @@ const MoreInfo = () => {
         <SeeMore 
 
             key={moreInfo?.id}
-            name={moreInfo?.name}
+            city={moreInfo?.name}
             mainTemp={moreInfo?.main.temp}
             mainWeather={moreInfo?.weather[0].main}
-            description={moreInfo?.weather[0].description}
             maxWeather={moreInfo?.main["temp_max"]}
             minWeather={moreInfo?.main["temp_min"]}
             

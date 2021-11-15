@@ -24,7 +24,7 @@ function App() {
         </Route>
 
         
-        <Route path="/:name/:id" exact>
+        <Route path="/:city/:id" exact>
           <MoreInfo />
         </Route>
 
