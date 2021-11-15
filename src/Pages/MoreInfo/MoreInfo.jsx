@@ -26,7 +26,7 @@ const MoreInfo = () => {
             setMoreInfo(null);
             setLoader(true);
 
-            const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=es&appid=${process.env.REACT_APP_API_KEY}`
+            const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=es&appid=dc357b1343daa709c0359ab4152b5366`
             const response = await fetch(API);
             const result = await response.json();
             setMoreInfo(result);
